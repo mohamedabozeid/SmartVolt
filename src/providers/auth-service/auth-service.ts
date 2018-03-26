@@ -15,8 +15,10 @@ export class AuthServiceProvider {
      return false;
   }
 
-  constructor() {
-    console.log('Hello AuthServiceProvider Provider');
+  constructor() {}
+  
+  login(username: string, password: string){
+    
   }
 
 }

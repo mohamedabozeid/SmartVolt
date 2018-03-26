@@ -8,20 +8,21 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
+
 <ion-content padding id="page5">
-  <form id="login-form2">
+  <form id="login-form2" (submit)="onSubmit($event)">
     <ion-list id="login-list3">
       <ion-item id="login-input3">
         <ion-label>
-          Email
+          Username
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email" placeholder="" [(ngModel)]="model.username"name="username" ></ion-input>
       </ion-item>
       <ion-item id="login-input4">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="password" placeholder=""></ion-input>
+        <ion-input type="password" placeholder="" [(ngModel)]="model.password" name="password"></ion-input>
       </ion-item>
     </ion-list>
     <div class="spacer" style="height:40px;" id="login-spacer2"></div>

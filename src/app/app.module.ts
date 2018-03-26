@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -12,6 +13,7 @@ import { DevicePage } from '../pages/device/device';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { SmartHttpProvider } from '../providers/smart-http/smart-http';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -39,7 +42,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    SmartHttpProvider
   ]
 })
 export class AppModule {}
