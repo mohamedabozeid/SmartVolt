@@ -1,4 +1,9 @@
 import { Injectable } from '@angular/core';
+import {LoginModel} from '../../models/auth.models';
+import {SmartHttpProvider} from '../smart-http/smart-http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 /*
   Generated class for the AuthServiceProvider provider.
@@ -15,10 +20,10 @@ export class AuthServiceProvider {
      return false;
   }
 
-  constructor() {}
+  constructor(private http: SmartHttpProvider) {}
   
-  login(username: string, password: string){
-    
+  login(loginModel: LoginModel):Observable<any>{
+    return this.http.post<any>('/auth/login',loginModel);
   }
 
 }
