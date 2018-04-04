@@ -11,6 +11,7 @@ import {LoginModel} from '../../models/auth.models';
 export class LoginPage {
   signupPage: any = SignupPage;
   private model: LoginModel = new LoginModel();
+  private isBusy: boolean = false;
   constructor(
     public navCtrl: NavController,
     public viewCtrl: ViewController,
@@ -22,7 +23,10 @@ export class LoginPage {
     this.viewCtrl.showBackButton(false);
   }
   onSubmit(){
-    this.authService.login(this.model).subscribe(data=> console.log(data));
+    this.isBusy = true;
+    this.authService.login(this.model).subscribe(data=> {
+      this.isBusy = false;
+    });
   }
 
 }

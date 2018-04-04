@@ -27,7 +27,7 @@
     </ion-list>
     <div class="spacer" style="height:40px;" id="login-spacer2"></div>
     <button id="login-button3" ion-button color="stable" block>
-      Log in
+      Log in <ion-spinner *ngIf="isBusy"></ion-spinner>
     </button>
     <button id="login-button4" ion-button clear color="positive" block [navPush]="signupPage">
       Or create an account
