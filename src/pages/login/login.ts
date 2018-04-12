@@ -24,8 +24,11 @@ export class LoginPage {
   }
   onSubmit(){
     this.isBusy = true;
-    this.authService.login(this.model).subscribe(data=> {
+    this.authService.login(this.model).subscribe(success=> {
       this.isBusy = false;
+      if(success===true){
+        this.navCtrl.pop();
+      }
     });
   }
 
