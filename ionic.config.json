@@ -2,5 +2,7 @@
   "name": "smartvolt",
   "app_id": "a20ba952",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { DevicesPage } from '../pages/devices/devices';
 import { DevicePage } from '../pages/device/device';
+import { AddDevicePage } from '../pages/add-device/add-device';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,7 +23,8 @@ import { SmartHttpProvider } from '../providers/smart-http/smart-http';
     LoginPage,
     SignupPage,
     DevicesPage,
-    DevicePage
+    DevicePage,
+    AddDevicePage
   ],
   imports: [
     BrowserModule,
@@ -36,14 +38,15 @@ import { SmartHttpProvider } from '../providers/smart-http/smart-http';
     LoginPage,
     SignupPage,
     DevicesPage,
-    DevicePage
+    DevicePage,
+    AddDevicePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
     SmartHttpProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

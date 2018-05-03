@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
-import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
-import {LoginModel} from '../../models/auth.models';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { LoginModel } from '../../models/auth.models';
 
 @Component({
   selector: 'page-login',
@@ -22,11 +22,11 @@ export class LoginPage {
   ionViewWillEnter() {
     this.viewCtrl.showBackButton(false);
   }
-  onSubmit(){
+  onSubmit() {
     this.isBusy = true;
-    this.authService.login(this.model).subscribe(success=> {
+    this.authService.login(this.model).subscribe(success => {
       this.isBusy = false;
-      if(success===true){
+      if (success === true) {
         this.navCtrl.pop();
       }
     });
