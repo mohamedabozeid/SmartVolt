@@ -43,7 +43,12 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-hotspot": {},
-      "cordova-plugin-flashlight": {}
+      "cordova-plugin-flashlight": {},
+      "cordova-plugin-ionic": {
+        "APP_ID": "a20ba952",
+        "CHANNEL_NAME": "Master",
+        "UPDATE_METHOD": "background"
+      }
     }
   }
 }
