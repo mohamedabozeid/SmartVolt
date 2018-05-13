@@ -22,7 +22,7 @@ export class AddDevicePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddDevicePage');
-    this.scanWifi();
+    //this.scanWifi();
     //console.log(cordova);
     //this.showAlert('Before check ssd', 'we are working');
     //this.getSsidName();
@@ -41,6 +41,7 @@ export class AddDevicePage {
   }
 
   scanWifi() {
+    alert('start wifi scanning');
     this.hotspot.scanWifi().then((networks: Array<HotspotNetwork>) => {
       console.log(networks);
       this.networks= networks;
