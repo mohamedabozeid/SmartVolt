@@ -14,5 +14,9 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <button ion-item *ngFor="let network of networks" (click)="networkSelected(network)">
+      {{ network.SSID }}
+    </button>  
+  </ion-list>
 </ion-content>

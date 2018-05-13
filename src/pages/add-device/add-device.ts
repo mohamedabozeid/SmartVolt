@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Hotspot, HotspotNetwork } from '@ionic-native/hotspot';
 
-declare var WifiWizard: any;
 
 @Component({
   selector: 'page-add-device',
@@ -10,31 +10,25 @@ declare var WifiWizard: any;
 })
 export class AddDevicePage {
   currentSSD: string;
+  networks: Array<HotspotNetwork>;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    private hotspot: Hotspot
   ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddDevicePage');
+    this.scanWifi();
     //console.log(cordova);
-    this.showAlert('Before check ssd', 'we are working');
-    this.getSsidName();
-    /* if(cordova){
-      cordova.WifiWizard.getCurrentSSID((ssd: string)=>{
-        this.showAlert('SSID Found!', `Your SSID is ${ssd}`);
-      }, ()=>{});
-    }else{
-      this.showAlert('cordova is null', 'please check what is wrong');
-    } */
-    
-   // this.showAlert('After check ssd', 'we are done checking');
+    //this.showAlert('Before check ssd', 'we are working');
+    //this.getSsidName();
   }
 
-  showAlert(title: string, subTitle: string){
+  showAlert(title: string, subTitle: string) {
     let alert = this.alertCtrl.create({
       title: title,
       subTitle: subTitle,
@@ -46,16 +40,12 @@ export class AddDevicePage {
     alert(`Problem: ${err}`);
   }
 
-  getSsidName() {
-    WifiWizard.getCurrentSSID((ssid: string) => alert(`Your SSID: ${ssid}`), this.errorHandler);
+  scanWifi() {
+    this.hotspot.scanWifi().then((networks: Array<HotspotNetwork>) => {
+      console.log(networks);
+      this.networks= networks;
+    });
   }
 
-  isWifiEnabled() {
-    WifiWizard.isWifiEnabled(truthy => alert(`Wifi Enabled: ${truthy}`), this.errorHandler);
-  }
-
-  listNetworks() {
-    WifiWizard.listNetworks(networks => alert(`Networks: ${networks}`), this.errorHandler);
-  }
 
 }
