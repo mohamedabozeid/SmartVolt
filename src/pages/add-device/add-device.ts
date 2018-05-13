@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+import { AlertController, Platform } from 'ionic-angular';
 import { Hotspot, HotspotNetwork } from '@ionic-native/hotspot';
 
 
@@ -16,12 +16,22 @@ export class AddDevicePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public alertCtrl: AlertController,
-    private hotspot: Hotspot
+    private hotspot: Hotspot,
+    private platform: Platform
   ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddDevicePage');
+    if (this.platform.is('cordova')) {
+      // You're on a device, call the native plugins. Example: 
+      console.log('You are on a device, call the native plugins.');
+    } else {
+      console.log('You are testing in browser');
+      // You're testing in browser, do nothing or mock the plugins' behaviour.
+      //
+      // var url: string = 'assets/mock-images/image.jpg';
+    }
     //this.scanWifi();
     //console.log(cordova);
     //this.showAlert('Before check ssd', 'we are working');

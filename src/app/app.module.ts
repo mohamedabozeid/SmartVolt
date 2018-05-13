@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { SmartHttpProvider } from '../providers/smart-http/smart-http';
+import { Hotspot } from '@ionic-native/hotspot';
 
 import { Pro } from '@ionic/pro';
 
@@ -29,7 +30,7 @@ export class MyErrorHandler implements ErrorHandler {
   constructor(injector: Injector) {
     try {
       this.ionicErrorHandler = injector.get(IonicErrorHandler);
-    } catch(e) {
+    } catch (e) {
       // Unable to get the IonicErrorHandler provider, ensure
       // IonicErrorHandler has been added to the providers list below
     }
@@ -73,7 +74,8 @@ export class MyErrorHandler implements ErrorHandler {
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
-    SmartHttpProvider
+    SmartHttpProvider,
+    Hotspot
   ]
 })
 export class AppModule { }
