@@ -27,6 +27,7 @@ export class AuthServiceProvider {
       .map(result => {
         if (result.status == "OK") {
           this._user = result.user;
+          this.http.token = result.token;
           return true;
         }
         return false;

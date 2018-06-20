@@ -18,10 +18,11 @@ import { SmartHttpProvider } from '../providers/smart-http/smart-http';
 import { Hotspot } from '@ionic-native/hotspot';
 
 import { Pro } from '@ionic/pro';
+import { DevicesServiceProvider } from '../providers/devices-service/devices-service';
 
-Pro.init('a20ba952', {
+/* Pro.init('a20ba952', {
   appVersion: '1.0.0'
-})
+}) */
 
 @Injectable()
 export class MyErrorHandler implements ErrorHandler {
@@ -75,7 +76,8 @@ export class MyErrorHandler implements ErrorHandler {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
     SmartHttpProvider,
-    Hotspot
+    Hotspot,
+    DevicesServiceProvider
   ]
 })
 export class AppModule { }

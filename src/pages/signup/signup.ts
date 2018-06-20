@@ -7,7 +7,12 @@ import { NavController } from 'ionic-angular';
 })
 export class SignupPage {
 
+  model: {} = {};
   constructor(public navCtrl: NavController) {
+  }
+
+  onSubmit(){
+    this.navCtrl.pop();
   }
   
 }

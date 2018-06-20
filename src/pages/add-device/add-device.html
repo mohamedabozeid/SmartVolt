@@ -7,17 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>add-device</ion-title>
+    <ion-title>Add Device</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <button ion-button (click)="scanWifi()">Scan Wifi</button>
+    
+
+<ion-content padding> 
+    <ion-card>
+
+        <ion-card-content>
+          Please enter the device # in the back of your device then click verify button.
+        </ion-card-content>
+      
+      </ion-card>   
   <ion-list>
-    <button ion-item *ngFor="let network of networks" (click)="networkSelected(network)">
-      {{ network.SSID }}
-    </button>  
+   <ion-item>
+     <ion-input  type="number" placeholder="" [(ngModel)]="deviceId"></ion-input>
+   </ion-item>
+   <ion-item>
+     <button ion-button color="positive" block (click)="verify()">Verify </button>
+   </ion-item>
   </ion-list>
 </ion-content>

@@ -4,33 +4,52 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Signup
+      Register
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page6">
-  <form id="signup-form3">
-    <ion-list id="signup-list4">
-      <ion-item id="signup-input5">
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <ion-list >
+      <ion-item >
         <ion-label>
           Name
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" placeholder="" required name="name" [(ngModel)]="model.name"></ion-input>
       </ion-item>
-      <ion-item id="signup-input6">
+      <ion-item >
+        <ion-label>
+          Address
+        </ion-label>
+        <ion-input type="text" placeholder="" required name="address" [(ngModel)]="model.address"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Price</ion-label>
+          <ion-select required name="price" [(ngModel)]="model.price">
+            <ion-option value="nes">Spot</ion-option>
+            <ion-option value="n64">Fixed</ion-option>
+          </ion-select>
+        </ion-item>
+      <ion-item>
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email" placeholder="" required name="email" [(ngModel)]="model.email"></ion-input>
       </ion-item>
-      <ion-item id="signup-input7">
+      <ion-item>
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="password" placeholder="" required name="password" [(ngModel)]="model.password"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label>
+          Confirm password
+        </ion-label>
+        <ion-input type="password" placeholder="" required name="confirmPassword" [(ngModel)]="model.confirmPassword"></ion-input>
       </ion-item>
     </ion-list>
-    <button id="signup-button5" ion-button color="stable" block>
+    <button id="signup-button5" ion-button color="stable" block [disabled]="!form.valid" >
       Sign up
     </button>
   </form>
