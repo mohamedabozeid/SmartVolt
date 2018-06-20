@@ -15,7 +15,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { SmartHttpProvider } from '../providers/smart-http/smart-http';
-import { Hotspot } from '@ionic-native/hotspot';
 
 import { Pro } from '@ionic/pro';
 import { DevicesServiceProvider } from '../providers/devices-service/devices-service';
@@ -76,7 +75,6 @@ export class MyErrorHandler implements ErrorHandler {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
     SmartHttpProvider,
-    Hotspot,
     DevicesServiceProvider
   ]
 })
