@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+
+
+    <ion-buttons end>
+      <button ion-button outline>
+        Save
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="settings"></ion-icon> Configure</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+
+        <ion-card-content>
+          Give it a name you can remember ex Living Heat pump
+        </ion-card-content>
+      </ion-card>
+  <ion-list>
+    
+
+    <ion-item>
+        <ion-label>Name</ion-label>      
+      <ion-input type="text" [(ngModel)]="device.config.name" text-right></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Brand</ion-label>
+        <ion-select [(ngModel)]="device.config.brand" multiple="false" cancelText="Nah" okText="Okay!">
+          <ion-option value="fuji">Funjitsu</ion-option>
+          <ion-option value="sams">Samsung</ion-option>
+          
+        </ion-select>
+      </ion-item>
+    <ion-item>
+        <button ion-button color="positive" block (click)="save()">Save
+          <ion-spinner *ngIf="isBusy"></ion-spinner>
+        </button>        
+      </ion-item>
+
+
+
+  </ion-list>
+</ion-content>

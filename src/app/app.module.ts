@@ -6,9 +6,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { DevicesPage } from '../pages/devices/devices';
-import { DevicePage } from '../pages/device/device';
+import { DevicesListPage } from '../pages/devices-list/devices-list';
 import { AddDevicePage } from '../pages/add-device/add-device';
+import { ConfigureDevicePage } from '../pages/configure-device/configure-device';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -50,9 +50,9 @@ export class MyErrorHandler implements ErrorHandler {
     HomePage,
     LoginPage,
     SignupPage,
-    DevicesPage,
-    DevicePage,
-    AddDevicePage
+    DevicesListPage,
+    AddDevicePage,
+    ConfigureDevicePage
   ],
   imports: [
     BrowserModule,
@@ -65,9 +65,9 @@ export class MyErrorHandler implements ErrorHandler {
     HomePage,
     LoginPage,
     SignupPage,
-    DevicesPage,
-    DevicePage,
-    AddDevicePage
+    DevicesListPage,
+    AddDevicePage,
+    ConfigureDevicePage
   ],
   providers: [
     StatusBar,

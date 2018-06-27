@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { DevicesPage } from '../pages/devices/devices';
+import { DevicesListPage } from '../pages/devices-list/devices-list';
 
 
 
@@ -11,7 +11,7 @@ import { DevicesPage } from '../pages/devices/devices';
 })
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
-    rootPage:any = DevicesPage;
+    rootPage:any = DevicesListPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -23,6 +23,6 @@ export class MyApp {
   }
   goToHome(params){
     if (!params) params = {};
-    this.navCtrl.setRoot(DevicesPage);
+    this.navCtrl.setRoot(DevicesListPage);
   }
 }

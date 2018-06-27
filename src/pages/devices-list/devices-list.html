@@ -23,14 +23,9 @@
       </ion-fab-list>
     </ion-fab> -->
   <ion-list id="devices-list5">
-    <ion-item color="none" id="devices-list-item8">
-      Living Heat pump
+    <ion-item *ngFor="let device of devices" color="none" >
+      {{device.config.name}}
     </ion-item>
-    <ion-item color="none" id="devices-list-item9">
-      Heater bedroom
-    </ion-item>
-    <ion-item color="none" id="devices-list-item10">
-      Water Heater
-    </ion-item>
+   
   </ion-list>
 </ion-content>
