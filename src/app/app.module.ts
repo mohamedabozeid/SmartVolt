@@ -9,6 +9,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { DevicesListPage } from '../pages/devices-list/devices-list';
 import { AddDevicePage } from '../pages/add-device/add-device';
 import { ConfigureDevicePage } from '../pages/configure-device/configure-device';
+import { ManageDevicePage } from '../pages/manage-device/manage-device';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -52,7 +53,8 @@ export class MyErrorHandler implements ErrorHandler {
     SignupPage,
     DevicesListPage,
     AddDevicePage,
-    ConfigureDevicePage
+    ConfigureDevicePage,
+    ManageDevicePage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ export class MyErrorHandler implements ErrorHandler {
     SignupPage,
     DevicesListPage,
     AddDevicePage,
-    ConfigureDevicePage
+    ConfigureDevicePage,
+    ManageDevicePage
   ],
   providers: [
     StatusBar,
