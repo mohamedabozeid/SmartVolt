@@ -9,3 +9,7 @@ export class Device {
 export class DeviceConfiguration{
     name: string;
 }
+
+export enum DEVICE_COMMANDS{
+    OFF=0, ON
+}

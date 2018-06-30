@@ -4,7 +4,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LoginPage } from '../login/login';
 import { AddDevicePage } from '../add-device/add-device';
 import { DevicesServiceProvider } from '../../providers/devices-service/devices-service';
-import { Device } from '../../models/device.models';
+import { Device, DEVICE_COMMANDS } from '../../models/device.models';
 import { LoadingController } from 'ionic-angular';
 
 @Component({
@@ -14,7 +14,7 @@ import { LoadingController } from 'ionic-angular';
 export class DevicesListPage {
 
   devices: Device[] = [];
-  private  loader: any;
+  private loader: any;
   constructor(public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     private authService: AuthServiceProvider,
@@ -46,6 +46,12 @@ export class DevicesListPage {
       //duration: 3000
     });
     this.loader.present();
+  }
+
+  toggleDevice(device: Device, value: boolean) {
+    //console.log(`deviceId: ${device._id}, Value:${value}`);
+    this.devicesService.executeCommand(value ? DEVICE_COMMANDS.ON : DEVICE_COMMANDS.OFF,
+       device).subscribe(data=> console.log(data));
   }
 
 }

@@ -26,7 +26,7 @@
 
 
     <ion-item *ngFor="let device of devices">
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle  #check checked="false" (ionChange)="toggleDevice(device,check.value)"></ion-toggle>
       <ion-label>
           {{device.config.name}}
       </ion-label>
